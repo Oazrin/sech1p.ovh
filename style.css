@@ -220,5 +220,22 @@ code {
     padding: 2px 4px;
 	white-space: pre-wrap;
 	word-wrap: break-word;
-	border-radius: 25ox;
+	border-radius: 5px; /* było oryginalnie "25ox" i przez literówkę nie parsowało; imo lepiej wygląda na 5px niż na 25, ale up to you  -nif*/
 }
+
+.inline-code {
+	padding: 0px 5px;
+	border-radius: 5px;
+} /* żeby nie zwiększało odstępu między liniami, self-explanatory */
+
+.portfolio-item .text-3x1 {
+	padding: 0px 0.4em;
+} /* trochę quick fix, bo nie wiem w jakich kontekstach jest używane text-3x1, ale działa. #TODO: wrap / scaling żeby dłuższe nazwy też się mieściły na kafelkach -nif*/
+
+.portfolio-item img {
+	object-fit:contain;
+} /* zapobiega zmianie aspect ratio obrazków na kafelkach. #TODO: przygotowac obrazki które od razu miałyby correct aspect ratos;  może na kafelku sech1p.art dać samo logo albo favicon jak będzie? -nif*/
+
+@media screen and (max-width: 640px) .home-content {
+	margin-top: 240px;
+} /* zapobiega chowaniu się tekstu pod menu nawigacyjne na wąskich ekranach. trochę quick fix, wartość max-width oraz margin-top do zmiany w przypadku zmian w menu nawigacyjnym. nie udało mi się przetestować, ale wierzę że zadziała~ -nif*/
